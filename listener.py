@@ -18,6 +18,7 @@ def handle_conn(io, user, key):
     message = dec(message, key)
 
     key_shared, initiator = split_at(message, BS)
+    initiator = initiator.decode()
     nonce = generate_nonce()
     print(f"[B] Sending {initiator} a nonce challenge - {nonce = }.")
 
